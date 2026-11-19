@@ -14,7 +14,7 @@
   <link rel="canonical" href="https://fahamtakaful.com/">
   <link rel="alternate" hreflang="ms-MY" href="https://fahamtakaful.com/">
   <link rel="alternate" hreflang="x-default" href="https://fahamtakaful.com/">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23623189'/%3E%3Cg fill='none' stroke='%23FFFFFF' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='14' y='24' width='36' height='16' rx='8' transform='rotate(-45 32 32)'/%3E%3Cpath d='M26.5 26.5l11 11'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%238238E8'/%3E%3Cg fill='none' stroke='%23FFFFFF' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='14' y='24' width='36' height='16' rx='8' transform='rotate(-45 32 32)'/%3E%3Cpath d='M26.5 26.5l11 11'/%3E%3C/g%3E%3C/svg%3E">
 
   <!-- Open Graph / WhatsApp / Facebook Preview -->
   <meta property="og:type" content="website">
@@ -204,9 +204,11 @@
       --bg-dark: #241335;
       --bg-dark-deep: #1c0e2b;
       --brand: #623189;
+      --brand-bright: #8238e8;
       --brand-hover: #4f2571;
       --brand-deep: #3d1d59;
       --amber: #f4ac48;
+      --gold: #f4b43e;
       --amber-bright: #ffc76e;
       --amber-ink: #241335;
       --amber-dark: #704304;
@@ -312,7 +314,7 @@
       width: 38px;
       height: 38px;
       border-radius: 999px;
-      background: var(--brand);
+      background: var(--brand-bright);
       color: #ffffff;
       align-items: center;
       justify-content: center;
@@ -323,7 +325,7 @@
       font-size: 21px;
       letter-spacing: -0.025em;
     }
-    .brand-name span { color: var(--brand); }
+    .brand-name span { color: var(--brand-bright); }
 
     .desktop-nav {
       display: flex;
@@ -364,7 +366,7 @@
       text-decoration: none;
       border: 0;
       cursor: pointer;
-      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      transition: transform 0.15s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, border-color 0.15s ease;
     }
     .btn:hover { transform: translateY(-1px); }
     .btn:active { transform: translateY(0); }
@@ -376,6 +378,17 @@
     .btn-primary:hover {
       background: var(--brand-hover);
       box-shadow: 0 6px 18px rgba(98, 49, 137, 0.34);
+    }
+    .btn-analisis {
+      background: var(--brand-bright);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(130, 56, 232, 0.3);
+    }
+    .btn-analisis:hover,
+    .btn-analisis:focus-visible {
+      background: var(--gold);
+      color: #241335;
+      box-shadow: 0 6px 20px rgba(244, 180, 62, 0.45);
     }
     .btn-amber {
       background: var(--amber-bright);
@@ -1134,7 +1147,7 @@
       flex-shrink: 0;
     }
     .case-person h3 { font-size: 18px; font-weight: 700; }
-    .case-person span { display: block; font-size: 14px; color: var(--ink-muted); }
+    .case-person > div > span { display: block; font-size: 14px; color: var(--ink-muted); }
     .case-badge {
       font-size: 12px;
       font-weight: 700;
@@ -1364,15 +1377,16 @@
     .wa-direct-icon {
       flex: none;
       display: flex;
-      width: 46px;
-      height: 46px;
+      width: 48px;
+      height: 48px;
       border-radius: 999px;
-      background: var(--whatsapp);
+      background: #20b858;
       color: #ffffff;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 4px 12px rgba(32, 184, 88, 0.28);
     }
-    .wa-direct-card span { display: block; font-size: 14px; color: var(--ink-muted); }
+    .wa-direct-card > div > span { display: block; font-size: 14px; color: var(--ink-muted); }
     .wa-direct-card a {
       font-size: 17px;
       font-weight: 800;
@@ -1785,7 +1799,7 @@
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-primary header-cta" href="#borang">
+        <a class="btn btn-analisis header-cta" href="#borang">
           Analisis Percuma
           <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -1804,7 +1818,7 @@
         <a href="#soalan">Soalan Lazim</a>
       </nav>
       <div class="mobile-drawer-cta">
-        <a class="btn btn-primary" href="#borang">Analisis Percuma</a>
+        <a class="btn btn-analisis" href="#borang">Analisis Percuma</a>
         <a class="btn btn-whatsapp" href="https://wa.me/601176222051" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       </div>
     </div>
@@ -2144,7 +2158,7 @@
                 <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </button>
               <a class="calc-wa-link" id="btn-wa-calc" href="https://wa.me/601176222051" target="_blank" rel="noopener noreferrer">
-                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>
+                <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.79 14.01c-.24.68-1.41 1.3-1.95 1.38-.5.08-1.13.11-1.83-.11-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.82-4.21-4.97-4.4-.15-.19-1.19-1.58-1.19-3.02 0-1.44.75-2.15 1.02-2.44.27-.29.59-.36.79-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.83 2.02.9 2.17.07.15.12.32.02.51-.1.19-.15.32-.29.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.07 1.31 2.36 1.46.29.15.46.12.63-.07.17-.2.73-.85.93-1.14.2-.29.39-.24.66-.15.27.1 1.71.81 2 .95.29.15.49.22.56.34.07.12.07.7-.17 1.38z"/></svg>
                 Hantar anggaran ini terus ke WhatsApp
               </a>
             </div>
@@ -2194,7 +2208,7 @@
           <article class="case-card">
             <div class="case-top">
               <div class="case-person">
-                <span class="case-avatar" aria-hidden="true">A</span>
+                <span class="case-avatar" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 19c0-3 2.5-5 6-5s6 2 6 5"/><circle cx="17" cy="9.5" r="2.2"/><path d="M16.5 14.2c2.5.4 4.5 2 4.5 4.8"/></svg></span>
                 <div><h3>Aisyah, 32</h3><span>Guru, dua anak kecil</span></div>
               </div>
               <span class="case-badge">Contoh ilustrasi</span>
@@ -2214,7 +2228,7 @@
           <article class="case-card">
             <div class="case-top">
               <div class="case-person">
-                <span class="case-avatar" aria-hidden="true">F</span>
+                <span class="case-avatar" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></span>
                 <div><h3>Faizal, 41</h3><span>Usahawan, tiada caruman majikan</span></div>
               </div>
               <span class="case-badge">Contoh ilustrasi</span>
@@ -2234,7 +2248,7 @@
           <article class="case-card">
             <div class="case-top">
               <div class="case-person">
-                <span class="case-avatar" aria-hidden="true">H</span>
+                <span class="case-avatar" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg></span>
                 <div><h3>Hakim, 26</h3><span>Baru mula bekerja</span></div>
               </div>
               <span class="case-badge">Contoh ilustrasi</span>
@@ -2335,7 +2349,7 @@
             </ul>
             <div class="wa-direct-card">
               <span class="wa-direct-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.79 14.01c-.24.68-1.41 1.3-1.95 1.38-.5.08-1.13.11-1.83-.11-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.82-4.21-4.97-4.4-.15-.19-1.19-1.58-1.19-3.02 0-1.44.75-2.15 1.02-2.44.27-.29.59-.36.79-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.83 2.02.9 2.17.07.15.12.32.02.51-.1.19-.15.32-.29.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.07 1.31 2.36 1.46.29.15.46.12.63-.07.17-.2.73-.85.93-1.14.2-.29.39-.24.66-.15.27.1 1.71.81 2 .95.29.15.49.22.56.34.07.12.07.7-.17 1.38z"/></svg>
               </span>
               <div>
                 <span>Lebih suka WhatsApp terus?</span>
@@ -2433,7 +2447,7 @@
               <p style="font-size:16px;line-height:1.65;color:var(--ink-muted);" id="success-summary">Saya akan menghubungi anda melalui WhatsApp pada waktu yang anda pilih. Untuk respons lebih pantas, tekan butang WhatsApp di bawah.</p>
               <div class="success-actions">
                 <a class="btn btn-whatsapp" id="success-wa-link" href="https://wa.me/601176222051" target="_blank" rel="noopener noreferrer">
-                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>
+                  <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.79 14.01c-.24.68-1.41 1.3-1.95 1.38-.5.08-1.13.11-1.83-.11-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.82-4.21-4.97-4.4-.15-.19-1.19-1.58-1.19-3.02 0-1.44.75-2.15 1.02-2.44.27-.29.59-.36.79-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.83 2.02.9 2.17.07.15.12.32.02.51-.1.19-.15.32-.29.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.07 1.31 2.36 1.46.29.15.46.12.63-.07.17-.2.73-.85.93-1.14.2-.29.39-.24.66-.15.27.1 1.71.81 2 .95.29.15.49.22.56.34.07.12.07.7-.17 1.38z"/></svg>
                   Hantar terus ke WhatsApp
                 </a>
                 <button class="btn btn-outline" type="button" id="btn-reset-form">Hantar pertanyaan lain</button>
@@ -2527,7 +2541,7 @@
 
   <!-- Floating WhatsApp Quick Action -->
   <a class="wa-fab" href="https://wa.me/601176222051?text=Assalamualaikum%20Dr.%20Syahrir%2C%20saya%20ingin%20bertanya%20tentang%20perancangan%20takaful%20dari%20FahamTakaful.com." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Dr. Syahrir Zaini">
-    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>
+    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.79 14.01c-.24.68-1.41 1.3-1.95 1.38-.5.08-1.13.11-1.83-.11-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.82-4.21-4.97-4.4-.15-.19-1.19-1.58-1.19-3.02 0-1.44.75-2.15 1.02-2.44.27-.29.59-.36.79-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.83 2.02.9 2.17.07.15.12.32.02.51-.1.19-.15.32-.29.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.07 1.31 2.36 1.46.29.15.46.12.63-.07.17-.2.73-.85.93-1.14.2-.29.39-.24.66-.15.27.1 1.71.81 2 .95.29.15.49.22.56.34.07.12.07.7-.17 1.38z"/></svg>
     <span class="wa-fab-text">WhatsApp</span>
   </a>
 
