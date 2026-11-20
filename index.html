@@ -766,13 +766,25 @@
     }
     .protection-icon {
       display: flex;
-      width: 54px;
-      height: 54px;
-      border-radius: 999px;
-      background: var(--brand);
-      color: #ffffff;
+      width: 82px;
+      height: 82px;
+      border-radius: 22px;
+      background: #ffffff;
+      border: 1px solid #e9def6;
+      box-shadow: 0 8px 20px rgba(71, 31, 128, 0.08);
+      padding: 8px;
       align-items: center;
       justify-content: center;
+    }
+    .protection-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+    .protection-card:hover .protection-icon img {
+      transform: scale(1.06);
     }
     .protection-card h3 {
       font-size: 22px;
@@ -1104,6 +1116,81 @@
     .step-item p {
       font-size: 15.5px;
       line-height: 1.65;
+      color: var(--ink-muted);
+    }
+    .steps-showcase {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1.32fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .steps-visual-card {
+      margin: 0;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+    }
+    .steps-visual-photo {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      object-position: center 22%;
+      display: block;
+    }
+    .steps-visual-report-wrap {
+      height: 360px;
+      background: #ffffff;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .steps-visual-report {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .steps-visual-body {
+      padding: 20px 24px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+      border-top: 1px solid var(--border);
+    }
+    .steps-visual-report-wrap + .steps-visual-body {
+      border-top: none;
+    }
+    .steps-visual-tag {
+      align-self: flex-start;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand);
+      background: #f3ecfe;
+      border-radius: 999px;
+      padding: 4px 10px;
+    }
+    .steps-visual-body h3 {
+      font-size: 18px;
+      line-height: 1.3;
+      font-weight: 700;
+      color: var(--ink);
+      margin-top: 2px;
+    }
+    .steps-visual-body p {
+      font-size: 14px;
+      line-height: 1.6;
       color: var(--ink-muted);
     }
 
@@ -1557,18 +1644,26 @@
       background: var(--bg-amber-soft);
       border: 1px solid #eccfa0;
       border-radius: 24px;
-      padding: 28px 32px;
-      display: flex;
-      flex-wrap: wrap;
+      padding: 26px 30px;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
       align-items: center;
-      justify-content: space-between;
-      gap: 20px 28px;
+      gap: 26px 30px;
+    }
+    .cs-insight-photo {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid rgba(180, 145, 95, 0.35);
+      display: block;
+      box-shadow: 0 8px 20px rgba(36, 19, 53, 0.08);
     }
     .cs-insight-copy {
-      flex: 1 1 520px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      align-items: flex-start;
+      gap: 10px;
     }
     .cs-insight-copy h3 {
       font-size: 20px;
@@ -1579,6 +1674,9 @@
       font-size: 15px;
       line-height: 1.65;
       color: #3d3223;
+    }
+    .cs-insight-copy .btn {
+      margin-top: 6px;
     }
     .cs-footnote {
       margin-top: 18px;
@@ -1696,9 +1794,12 @@
     }
     .ebook-mockup-img {
       flex: none;
-      width: 140px;
-      height: auto;
-      border-radius: 10px;
+      width: 248px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid rgba(180, 145, 95, 0.38);
+      box-shadow: 0 12px 26px rgba(36, 19, 53, 0.12);
       display: block;
     }
     .ebook-label {
@@ -2170,7 +2271,10 @@
       .pillar-card:nth-child(5) { grid-column: 1 / -1; }
       .protection-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .calc-grid { grid-template-columns: 1fr; }
-      .steps-list, .cases-grid, .cs-infographic-grid, .cs-profile-strip { grid-template-columns: 1fr; }
+      .steps-list, .steps-showcase, .cases-grid, .cs-infographic-grid, .cs-profile-strip, .cs-insight-box { grid-template-columns: 1fr; }
+      .steps-visual-photo { height: auto; aspect-ratio: 3 / 2; }
+      .steps-visual-report-wrap { height: auto; padding: 18px; }
+      .steps-visual-report { max-height: 440px; }
       .guides-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .guide-card, .guide-card:nth-child(4), .guide-card:nth-child(5) { grid-column: auto; }
       .guide-card:nth-child(5) { grid-column: 1 / -1; }
@@ -2191,7 +2295,7 @@
       .pillar-card:nth-child(5), .guide-card:nth-child(5) { grid-column: auto; }
       .calc-inputs, .calc-result, .form-card, .ebook-banner, .cs-panel, .cs-insight-box { padding: 22px 18px; }
       .ebook-content { flex-direction: column; align-items: flex-start; gap: 16px; }
-      .ebook-mockup-img { width: 120px; }
+      .ebook-mockup-img { width: 100%; max-width: 280px; }
       .family-figure::before { inset: -8px 8px 8px -8px; border-radius: 48px 16px; }
       .family-photo { border-radius: 44px 14px; }
       .family-badge { left: 10px; bottom: 10px; padding: 8px 12px 8px 8px; }
@@ -2386,7 +2490,7 @@
 
         <div class="protection-grid">
           <article class="protection-card">
-            <span class="protection-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>
+            <span class="protection-icon" aria-hidden="true"><img src="assets/ikon-hibah.webp" width="256" height="256" loading="lazy" decoding="async" alt=""></span>
             <h3>Hibah Takaful</h3>
             <p>Wang tunai kepada penerima hibah yang anda namakan, untuk menampung keluarga jika berlaku kematian atau hilang upaya.</p>
             <ul class="check-list">
@@ -2398,7 +2502,7 @@
           </article>
 
           <article class="protection-card">
-            <span class="protection-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M7.5 12h5M10 9.5v5M15.5 10h2.5M15.5 14h2.5"/></svg></span>
+            <span class="protection-icon" aria-hidden="true"><img src="assets/ikon-medical-card.webp" width="256" height="256" loading="lazy" decoding="async" alt=""></span>
             <h3>Medical Card</h3>
             <p>Perlindungan kos rawatan hospital dan pembedahan, supaya simpanan keluarga tidak habis apabila jatuh sakit.</p>
             <ul class="check-list">
@@ -2410,7 +2514,7 @@
           </article>
 
           <article class="protection-card">
-            <span class="protection-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span>
+            <span class="protection-icon" aria-hidden="true"><img src="assets/ikon-penyakit-kritikal.webp" width="256" height="256" loading="lazy" decoding="async" alt=""></span>
             <h3>Perlindungan Penyakit Kritikal</h3>
             <p>Wang tunai sekali gus apabila didiagnos penyakit kritikal seperti kanser, serangan jantung atau strok.</p>
             <ul class="check-list">
@@ -2422,7 +2526,7 @@
           </article>
 
           <article class="protection-card">
-            <span class="protection-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4M8 15h3"/></svg></span>
+            <span class="protection-icon" aria-hidden="true"><img src="assets/ikon-penggantian-gaji.webp" width="256" height="256" loading="lazy" decoding="async" alt=""></span>
             <h3>Pelan Penggantian Gaji</h3>
             <p>Pendapatan bulanan berkala untuk keluarga jika anda tidak lagi mampu bekerja.</p>
             <ul class="check-list">
@@ -2434,7 +2538,7 @@
           </article>
 
           <article class="protection-card">
-            <span class="protection-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9.5L12 5l9.5 4.5L12 14z"/><path d="M6.5 11.6V16c0 1.7 2.5 3 5.5 3s5.5-1.3 5.5-3v-4.4"/><path d="M21.5 9.5v5"/></svg></span>
+            <span class="protection-icon" aria-hidden="true"><img src="assets/ikon-pendidikan.webp" width="256" height="256" loading="lazy" decoding="async" alt=""></span>
             <h3>Simpanan Pendidikan</h3>
             <p>Rancang dana pengajian anak secara berdisiplin dari awal, supaya impian mereka tidak terhenti kerana kos.</p>
             <ul class="check-list">
@@ -2446,7 +2550,7 @@
           </article>
 
           <article class="protection-card">
-            <span class="protection-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18"/><path d="M6.5 17a5.5 5.5 0 0 1 11 0"/><path d="M12 5.5v3M5.3 9.3l2 2M18.7 9.3l-2 2"/><path d="M8 20.5h8"/></svg></span>
+            <span class="protection-icon" aria-hidden="true"><img src="assets/ikon-persaraan.webp" width="256" height="256" loading="lazy" decoding="async" alt=""></span>
             <h3>Simpanan Persaraan</h3>
             <p>Bina dana tambahan untuk hari tua, supaya anda bersara dengan tenang tanpa membebankan anak-anak.</p>
             <ul class="check-list">
@@ -2621,6 +2725,28 @@
             <p>Ringkasan keperluan dan pilihan perlindungan untuk anda fikirkan bersama keluarga, tanpa desakan.</p>
           </li>
         </ol>
+
+        <div class="steps-showcase">
+          <figure class="steps-visual-card">
+            <img class="steps-visual-photo" src="assets/konsultasi-online.webp" width="960" height="639" loading="lazy" decoding="async" alt="Dr. Syahrir bin Zaini mengendalikan sesi perbincangan takaful keluarga secara dalam talian melalui komputer riba">
+            <figcaption class="steps-visual-body">
+              <span class="steps-visual-tag">Langkah 2 · Sesi Dalam Talian</span>
+              <h3>Perbincangan santai, jelas dan tanpa tekanan</h3>
+              <p>Berbual terus bersama Dr. Syahrir melalui WhatsApp, Zoom atau Google Meet — atau bersemuka di Kuantan, ikut keselesaan masa anda dan pasangan.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="steps-visual-card">
+            <div class="steps-visual-report-wrap">
+              <img class="steps-visual-report" src="assets/contoh-laporan-analisis.webp" width="720" height="900" loading="lazy" decoding="async" alt="Contoh laporan ringkasan analisis keluarga FahamTakaful memaparkan perlindungan sedia ada, anggaran keperluan dan jurang perlindungan">
+            </div>
+            <figcaption class="steps-visual-body">
+              <span class="steps-visual-tag">Langkah 3 · Contoh Laporan</span>
+              <h3>Ringkasan bertulis dengan angka sebenar</h3>
+              <p>Paparan jelas perlindungan sedia ada, anggaran keperluan dan jurang keluarga supaya mudah dibincang bersama pasangan.</p>
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -2908,14 +3034,15 @@
 
         <!-- Layer 3: Pharmacist Perspective + Direct CTA -->
         <div class="cs-insight-box">
+          <img class="cs-insight-photo" src="assets/tangan-bayi-ayah.webp" width="840" height="559" loading="lazy" decoding="async" alt="Tangan kecil bayi baru lahir menggenggam jari bapanya, melambangkan amanah perlindungan keluarga">
           <div class="cs-insight-copy">
             <h3>Pandangan Dr. Syahrir (Ahli Farmasi)</h3>
             <p>Untuk bayi dan kanak-kanak bawah 5 tahun, kemasukan wad akibat demam virus, jangkitan pernafasan atau dehidrasi kerap berlaku lebih daripada sekali dalam setahun. Sebab itu kita tidak sekadar melihat angka bulanan termurah — kita bandingkan struktur deduktibel, kadar bilik hospital swasta di bandar anda dan ketahanan bajet keluarga untuk 10–20 tahun akan datang.</p>
+            <button class="btn btn-dark" type="button" id="btn-case-study-cta">
+              Minta perbandingan untuk keluarga anda
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
           </div>
-          <button class="btn btn-dark" type="button" id="btn-case-study-cta">
-            Minta perbandingan untuk keluarga anda
-            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </button>
         </div>
 
         <p class="cs-footnote"><strong>Nota pendidikan:</strong> Angka di atas ialah contoh ilustrasi sebenar bagi profil bapa 27 tahun (tidak merokok) dan bayi lelaki 0 tahun bagi tujuan penerangan perbandingan sahaja, bukan iklan mana-mana produk tertentu. Caruman pelan perubatan tertakluk kepada semakan tabarru’ mengikut usia dan inflasi kos perubatan; nilai akaun adalah tidak dijamin; manfaat kematian/TPD kanak-kanak bawah umur 4 tahun tertakluk kepada <em>Juvenile Lien</em> serta terma rasmi pengendali takaful.</p>
@@ -2977,7 +3104,7 @@
 
         <div class="ebook-banner">
           <div class="ebook-content">
-            <img class="ebook-mockup-img" src="assets/ebook-mockup.webp" width="520" height="696" loading="lazy" decoding="async" alt="Mockup E-book Panduan Hibah Takaful Untuk Keluarga Muslim oleh Dr. Syahrir Zaini">
+            <img class="ebook-mockup-img" src="assets/ebook-smartphone.webp" width="840" height="630" loading="lazy" decoding="async" alt="Paparan telefon pintar menunjukkan kulit rasmi E-book Panduan Hibah Takaful Untuk Keluarga Muslim Edisi 2026 oleh Dr. Syahrir bin Zaini">
             <div>
               <span class="ebook-label">E-book percuma</span>
               <h3>Panduan Hibah Takaful Untuk Keluarga Muslim</h3>
